@@ -124,6 +124,10 @@
 	} else {
 		console.log('"z = "' + z + ' is bigger than other');
 	}
+
+	if ( w < Math.min(x, z) ) {
+		console.log( 'The least value is w: ' + w );
+	} 
 //---------------------------------------------------------------------------
 //--------------Switch-------------------------------------------------------
 	var suname = 'Wills';
@@ -169,7 +173,7 @@
 		function isNum(number) {
 			if (!isNaN(number)) return true;
 		}
-		
+
 		function checkAge( age ){
 			if ( isNum( age ) ) {
 				if ( age > 18 ) {
@@ -186,7 +190,7 @@
 			alert( message );
 		}
 
-		checkAge( getAge() );
+		checkAge( getAge() );  // FOR ME - look at this Call Function agan
 	}
 
 	</script>
