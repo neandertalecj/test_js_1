@@ -39,7 +39,7 @@
 			for (var j=1; j<=10; j++) {
 				var res = i*j;
 
-				if (res>=100){
+				if (res>=100) {
 					res += '_';
 				} else if (res<100 && res>9) {
 					res += '__';
@@ -58,14 +58,14 @@
 
 	var fullEscape = false;
 
-	function game(secret){	
+	function game(secret) {	
 		var num = prompt('Try to guess a secret number.');
 
 		while (num != secret && num !== null) {
 			num = prompt('It isn\'t right. Try to guess a secret number again.');
 		}//End WHILE
 
-		if (num === null){	
+		if (num === null) {	
 			return fullEscape = true;
 		}
 		alert('You\'re right. The secret number is really ' + secret);
@@ -119,7 +119,7 @@
 	var w = 1, x = 2, z = 3;
 	if (w > x && w > z) {
 		console.log('"w = "' + w + ' is bigger than other');
-	} else if ( x > w && x > z ) {
+	} else if (x > w && x > z) {
 		console.log('"x = "' + x + ' is bigger than other');
 	} else {
 		console.log('"z = "' + z + ' is bigger than other');
@@ -140,7 +140,7 @@
 //---------------------------------------------------------------------------
 //----------Sum numbers up -2- ----------------------------------------------
 	function sumNum() {	
-		function sum ( num1, num2 ) {
+		function sum (num1, num2) {
 			if (isNum(num1) && isNum(num2)) {
 				num1 = toNum(num1);
 				num2 = toNum(num2);
