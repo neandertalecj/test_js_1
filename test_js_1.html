@@ -15,8 +15,13 @@
 		</style>
 	</head>
 	<body>
+		<h4>Please, open the console (Press F12)</h4>
+		<hr>
 		<h4>Let's play: try to guess a number from 1 to 10</h4>
 		<button id="game" onclick="start()">Make a guess</button>
+		<hr>
+		<h4>Let's check you're enter a number or not (NaN)</h4>
+		<button  onclick="num()">Please, enter a number</button>
 		<hr>
 	</body>
 
@@ -73,7 +78,36 @@
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
-	
+	function num() {
+		var number1 = prompt( 'Enter some number' );
+		var number2 = prompt( 'Enter some number' );
+		console.log( number1 );// cancel => null
+		console.log( typeof number1 );// null => object - is mistake in js; 4 => string
+		console.log( isNaN( +number1 ) ); // 'lkhb' => true
+		
+		if( !isNaN( +number1) ) {
+			if ( !isNaN( +number2) ) {
+				number1 += number2;
+			} else {
+				alert('It\'s not a number');
+			}
+			alert( number1 );
+		} else {
+			alert( 'It\'s not a number' );
+		}
+	}
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+	// debugger
+	for (let i=1; i<=10; i++) {
+		// debugger
+		if ( i%5 == 0 ) {
+			continue
+		}
+		if ( i%2 == 0 ) {
+			console.log(i);
+		}
+	}
 
 	</script>
 </html>
