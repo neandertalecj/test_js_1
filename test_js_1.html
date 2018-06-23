@@ -34,9 +34,9 @@
 	<script>
 	//------------multiplication table-------------------------------
 		console.log(' ');
-		for(var i=1; i<=10; i++) {
+		for (var i=1; i<=10; i++) {
 			var string = '';
-			for(var j=1; j<=10; j++) {
+			for (var j=1; j<=10; j++) {
 				var res = i*j;
 
 				if (res>=100){
@@ -65,18 +65,18 @@
 			num = prompt('It isn\'t right. Try to guess a secret number again.');
 		}//End WHILE
 
-		if ( num === null ){	
+		if (num === null){	
 			return fullEscape = true;
 		}
 		alert('You\'re right. The secret number is really ' + secret);
 	}//End GAME
 
-	function start(){
+	function start() {
 			game(10);
-			if ( fullEscape === false ) {
+			if (fullEscape === false) {
 				var sta = confirm('Do you want to play again?'); 
 			}
-			if( sta ){ 
+			if (sta) { 
 				start();
 			}
 	} //End START
@@ -84,21 +84,21 @@
 //------------------------------------------------------------------------------
 //------------Sum numbers up -1-  ----------------------------------------------
 	function num() {
-		var number1 = prompt( 'Enter some number' );
-		var number2 = prompt( 'Enter some number' );
-		console.log( number1 );// cancel => null
-		console.log( typeof number1 );// null => object - is mistake in js; 4 => string
-		console.log( isNaN( +number1 ) ); // 'lkhb' => true
+		var number1 = prompt('Enter some number');
+		var number2 = prompt('Enter some number');
+		console.log(number1);// cancel => null
+		console.log(typeof number1);// null => object - is mistake in js; 4 => string
+		console.log(isNaN(+number1)); // 'lkhb' => true
 		
-		if( !isNaN( +number1) ) {  //we're always have a string
-			if ( !isNaN( +number2) ) {
-				number1 += number2;
+		if(!isNaN( +number1)) {  //we're always have a string
+			if (!isNaN( +number2)) {
+				number1 = +number1 + +number2;
 			} else {
 				alert('It\'s not a number');
 			}
-			alert( number1 );
+			alert(number1);
 		} else {
-			alert( 'It\'s not a number' );
+			alert('It\'s not a number');
 		}
 	}
 //---------------------------------------------------------------------------
@@ -106,18 +106,18 @@
 	// debugger
 	for (let i=1; i<=10; i++) {
 		// debugger
-		if ( i%5 == 0 ) {
+		if (i%5 == 0) {
 			continue;
 			// break
 		}
-		if ( i%2 == 0 ) {
+		if (i%2 == 0) {
 			console.log(i);
 		}
 	}
 //---------------------------------------------------------------------------
 //------Bigger from three numbers--------------------------------------------
 	var w = 1, x = 2, z = 3;
-	if ( w > x && w > z ) {
+	if (w > x && w > z) {
 		console.log('"w = "' + w + ' is bigger than other');
 	} else if ( x > w && x > z ) {
 		console.log('"x = "' + x + ' is bigger than other');
@@ -125,13 +125,13 @@
 		console.log('"z = "' + z + ' is bigger than other');
 	}
 
-	if ( w < Math.min(x, z) ) {
+	if (w < Math.min(x, z)) {
 		console.log( 'The least value is w: ' + w );
 	} 
 //---------------------------------------------------------------------------
 //--------------Switch-------------------------------------------------------
 	var suname = 'Wills';
-	switch( suname ){
+	switch (suname) {
 		case 'Jonson': homecity = 'Boston'; break;
 		case 'Wills': homecity = 'LA'; break;
 		default: homecity = 'USA';
@@ -139,11 +139,11 @@
 	console.log('Homecity of ' + suname + ' is ' + homecity);
 //---------------------------------------------------------------------------
 //----------Sum numbers up -2- ----------------------------------------------
-	function sumNum(){	
-		function sum( num1, num2 ) {
-			if ( isNum( num1 ) && isNum( num2 ) ) {
-				num1 = toNum( num1 );
-				num2 = toNum( num2 );
+	function sumNum() {	
+		function sum ( num1, num2 ) {
+			if (isNum(num1) && isNum(num2)) {
+				num1 = toNum(num1);
+				num2 = toNum(num2);
 				return num1 + num2;
 			} else {
 				alert("It's not a number");
@@ -154,19 +154,19 @@
 			if (!isNaN(number)) return true;
 		}
 
-		function toNum(number){
+		function toNum(number) {
 			return +number;
 		}
 
-		var num_1 = prompt( 'Enter first num_1' );
-		var num_2 = prompt( 'Enter second num_2' );
-		var sum = sum( num_1, num_2 );
-		console.log( 'The sum is ' + sum );
+		var num_1 = prompt('Enter first num_1');
+		var num_2 = prompt('Enter second num_2');
+		var sum = sum(num_1, num_2);
+		console.log('The sum is ' + sum);
 	}
 //---------------------------------------------------------------------------
 //----------Check an age------------------------------------------------------
-	function checkAnAge () {
-		function getAge () {
+	function checkAnAge() {
+		function getAge() {
 			return prompt('Enter your age');
 		}
 
@@ -174,20 +174,20 @@
 			if (!isNaN(number)) return true;
 		}
 
-		function checkAge( age ){
-			if ( isNum( age ) ) {
-				if ( age > 18 ) {
-					showMessage( 'Wellcome' );
+		function checkAge(age){
+			if (isNum(age)) {
+				if (age > 18) {
+					showMessage('Wellcome');
 				} else {
-					showMessage( 'Yankees go home' );
+					showMessage('Yankees go home');
 				}
 			} else {
-				showMessage( 'It\'s not a number.' );
+				showMessage('It\'s not a number.');
 			}
 		}
 
-		function showMessage ( message ) {
-			alert( message );
+		function showMessage(message) {
+			alert(message);
 		}
 
 		checkAge( getAge() );  // FOR ME - look at this Call Function agan
