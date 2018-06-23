@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>test 1</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<style>
+			
+			body{
+				margin: 40px;
+			}
+			input{
+				outline: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h4>Let's play: try to guess a number from 1 to 10</h4>
+		<button id="game" onclick="start()">Make a guess</button>
+		<hr>
+	</body>
+
+		
+	<script>
+	//------------multiplication table-------------------------------
+		console.log(' ');
+		for(var i=1; i<=10; i++) {
+			var string = '';
+			for(var j=1; j<=10; j++) {
+				var res = i*j;
+
+				if (res>=100){
+					res += '_';
+				} else if (res<100 && res>9) {
+					res += '__';
+				}
+				 else {
+					res += '___';
+				}//end IF
+				string += res;
+
+			}
+			console.log(' ' + string);
+		}//end FOR
+		console.log(' ');
+	//-------------------------------------------------------------
+	//----------GAME-----------------------------------------------
+
+	var fullEscape = false;
+
+	function game(secret){	
+		var num = prompt('Try to guess a secret number.');
+
+		while (num != secret && num !== null) {
+			num = prompt('It isn\'t right. Try to guess a secret number again.');
+		}//End WHILE
+
+		if ( num === null ){	
+			return fullEscape = true;
+		}
+		alert('You\'re right. The secret number is really ' + secret);
+	}//End GAME
+
+	function start(){
+			game(10);
+			if ( fullEscape === false ) {
+				var sta = confirm('Do you want to play again?'); 
+			}
+			if( sta ){ 
+				start();
+			}
+	} //End START
+
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+	
+
+	</script>
+</html>
