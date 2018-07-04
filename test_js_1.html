@@ -192,6 +192,83 @@
 
 		checkAge( getAge() );  // FOR ME - look at this Call Function agan
 	}
+//--------------------------------------------------------------------------------
+//-----------------Object---------------------------------------------------------
+var student = {
+	name: 'Vasyl',
+	adress: {
+		city: 'Kiev'
+	}
+}
+	student.adress.city  //"Kiev"
+	student['name']; //"Vasyl"
+	student['adress']['city'] //"Kiev"
+
+// window.alert('Hello');
+
+for (property in student){
+	console.log(property + ' -- from object "student" without recursion');
+}
+
+var arr = ['one', 25, null];
+	arr[3]; //undefined
+	arr[2]; //null
+	arr.length; //3
+	arr[arr.length-1]; //null
+
+for (property in student) {
+	console.log(property + ' ' + student[property]);
+}
+
+var student_1 = {
+	name: 'Aaron',
+	sayHello: function(){
+		alert('Hello ' + this.name);
+	}
+}
+// student_1.sayHello();
+
+var academy = {
+	groups: [
+		{number: 12, teacher: 'Selcer'}, 
+		{number: 22, teacher: 'Trueman'}
+	],
+	students: [
+		{name: 'Misha', email: 'mail@mail.com', group: 12},
+		{name: 'Fedot', email: 'mail@mail.com', group: 12}
+	],
+	showGroup: function(){
+		for (var l=0; l<this.groups.length; l++) {
+			console.log('Group #'+ this.groups[l].number + this.groups[l].teacher);
+			//console.log('Group #'+academy.groups[l].number+academy.groups[l].teacher);
+		}
+	},
+	showStudent: function() {
+		for (var k=0; k<this.students.length; k++) {
+			console.log('Group #'+ this.students[k].name + this.students[k].group);
+		}
+	}
+}
+// academy.showGroup()
+
+var colour = {
+	colors: {
+		red: '#ff0000',
+		green: '#00FF00'
+	},
+	askUser: function() {
+		var color = prompt('Enter colour');
+		if (color in colour.colors) {
+			colour.showMessage(colour.colors[color]);
+		} else {
+			colour.showMessage('Colour not found');
+		}
+	},
+	showMessage: function(message) {
+		alert(message);
+	}
+}
+// colour.askUser();
 
 	</script>
 </html>
